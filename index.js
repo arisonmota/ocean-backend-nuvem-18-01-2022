@@ -1,10 +1,13 @@
 const express = require("express");
 const { MongoClient, ObjectId } = require("mongodb");
+require('dotenv').config()
 
-//const url = "mongodb://localhost:27017";
-const url = "mongodb+srv://admin:DTm9ZJURA7jMqnJO@cluster0.6chw7.mongodb.net/";
+const dbhost = process.env.DB_HOST;
+const password = process.env.DB_PASSWORD;
+const dbuser = process.env.DB_USER;
+const dbName = process.env.DB_NAME;
 
-const dbName = "ocean_bancodados_18_01_2022";
+const url = `mongodb+srv://${dbuser}:${password}@${dbhost}`;
 
 async function main() {
     
